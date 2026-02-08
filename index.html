@@ -1,0 +1,70 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>♡ For You ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="mood-toggle">💖</div>
+
+  <div id="envelope-container">
+    <img src="envelope.png" id="envelope" />
+    <p>♡ Letter for You ♡</p>
+  </div>
+
+  <div id="letter-container">
+    <div class="letter-window">
+
+      <p id="intro-text">
+        Hi love 💕<br />
+        I made this little corner of the internet just for you.
+      </p>
+
+      <h1 id="letter-title" style="display:none;"></h1>
+
+      <!-- CAT / GIF AREA -->
+      <!-- HTML: replace the cat / tenor block with this -->
+      <div id="cat-wrapper">
+        <img src="cat_heart.gif" class="cat" id="cat-0" />
+        <img src="cute.gif" class="cat" id="cat-1" style="display:none;" />
+        <img src="cute-kawaii.gif" class="cat" id="cat-2" style="display:none;" />
+        <img src="white-cat.gif" class="cat" id="cat-3" style="display:none;" />
+
+      </div>
+
+            <!-- HTML: replace easter-egg text with this -->
+      <p id="easter-egg" style="display:none; font-size:18px; margin-top:10px;">
+        You found this because you’re curious… just like me 💖
+        <br />
+        <span id="egg-sub" style="font-size:14px; opacity:0.8;">(tap again)</span>
+      </p>
+
+
+
+
+      <div class="buttons" id="letter-buttons" style="display:none;">
+        <img src="yes.png" class="btn yes-btn" />
+        <img src="no.png" class="btn no-btn" />
+      </div>
+
+      <p id="final-text" class="final-text">
+        <strong>Valentine Date 💖</strong><br />
+        Us. Together.<br />
+      </p>
+
+    </div>
+  </div>
+
+  <script src="https://tenor.com/embed.js" async></script>
+  <script src="script.js"></script>
+</body>
+</html>

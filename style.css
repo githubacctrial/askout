@@ -1,0 +1,178 @@
+/* style.css */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Pixelify Sans", sans-serif;
+  background-image: url("heart-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* Mood overlay */
+body.alt-mood::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #c77dff, #ffafcc);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+/* Mood Toggle */
+#mood-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  background: rgba(255,240,240,0.9);
+  padding: 14px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#envelope-container {
+  text-align: center;
+  cursor: pointer;
+}
+
+#envelope {
+  width: 200px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+#letter-container {
+  display: none;
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter-window {
+  width: 90vw;
+  max-width: 800px;
+  aspect-ratio: 3 / 2;
+  padding-top: 180px;
+  text-align: center;
+  background-image: url("window.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scale(1.2);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.letter-window.open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+h1 { font-size: 30px; }
+p { font-size: 26px; }
+
+/* Cat wrapper */
+/* CSS: fix cat area height so layout never shifts */
+#cat-wrapper {
+  width: 240px;
+  height: 240px;   /* fixed height */
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cat {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.btn {
+  width: 120px;
+  cursor: pointer;
+}
+
+.no-btn { cursor: default; }
+
+.final-text {
+  display: none;
+  font-size: 22px;
+  background: rgba(255,240,240,0.6);
+  padding: 15px 25px;
+  border-radius: 12px;
+  margin-top: 100px;
+}
+
+/* Floating hearts */
+.floating-heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 22px;
+  animation: floatUp 3s linear forwards;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* CSS: optional subtle animation for easter egg */
+#easter-egg {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CSS: sparkle + glow */
+/* CSS: make sparkles BIG */
+/* CSS: BIG + FLOATING sparkles */
+.sparkle {
+  position: fixed;
+  font-size: 36px;              /* big */
+  pointer-events: none;
+  animation: sparkleFloat 1.8s ease-out forwards;
+}
+
+@keyframes sparkleFloat {
+  0% {
+    transform: translate(0, 0) scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+      calc(-50px + 100px * var(--drift)),
+      -120px
+    ) scale(1.6);
+    opacity: 0;
+  }
+}
+
+
+#easter-egg.glow {
+  text-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
+}
