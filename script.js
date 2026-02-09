@@ -5,7 +5,6 @@ const introText = document.getElementById("intro-text");
 const title = document.getElementById("letter-title");
 const buttons = document.getElementById("letter-buttons");
 const yesBtn = document.querySelector(".yes-btn");
-const noBtn = document.querySelector(".no-btn");
 const finalText = document.getElementById("final-text");
 const moodToggle = document.getElementById("mood-toggle");
 
@@ -27,13 +26,6 @@ envelope.addEventListener("click", () => {
     title.style.display = "block";
     buttons.style.display = "flex";
   }, 2000);
-});
-
-noBtn.addEventListener("mouseover", () => {
-  noBtn.style.transform = `
-    translate(${Math.random()*200 - 100}px,
-              ${Math.random()*200 - 100}px)
-  `;
 });
 
 // JS: small tweak in YES click to handle both cats
